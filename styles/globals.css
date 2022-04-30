@@ -1,9 +1,32 @@
+:root {
+  --bug-color: #C7D370;
+  --dark-color: #A6968B;
+  --dragon-color: #A581FD;
+  --electric-color: #FAE27B;
+  --fairy-color: #E5B3CC;
+  --fighting-color: #D97C79;
+  --fire-color: #FF994D;
+  --flying-color: #C9B9F7;
+  --ghost-color: #A896BE;
+  --grass-color: #ACDC8F;
+  --ground-color: #EDD79F;
+  --ice-color: #BDE7E5;
+  --normal-color: #C9C8AC;
+  --poison-color: #C686C4;
+  --psychic-color: #FB95B4;
+  --rock-color: #D1C481;
+  --steel-color: #D2D2E0;
+  --water-color: #9EBAF6;
+}
+
 html,
 body {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #f6f8fc;
+  max-width: 1200px;
 }
 
 a {
@@ -13,4 +36,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.card-list {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 240px 240px 240px;
 }

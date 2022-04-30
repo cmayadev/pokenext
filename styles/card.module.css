@@ -1,0 +1,30 @@
+.card {
+    background: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(37, 38, 94, 0.06);
+    cursor: pointer;
+
+    height: 170px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.image {
+    height: 100px;
+    margin-top: -50px;
+}
+
+.number {
+    color: #758A97;
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.name {
+    color: #0C2343;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,8 @@
+.header {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(37, 38, 94, 0.06);
+    height: 87px;
+    max-width: 1200px;
+    margin: 30px auto;
+}

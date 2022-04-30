@@ -1,0 +1,37 @@
+.skill {
+    background-color: #F6F8FC;
+    border-radius: 50px;
+    color: #011030;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    height: 37px;
+    line-height: 37px;
+    padding: 0 25px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    text-align: left;
+}
+
+.skill img {
+    height: 20px;
+    float: right;
+    opacity: 0.6;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.status {
+    background-color: #F6F8FC;
+    border-radius: 50px;
+    color: #011030;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 37px;
+    line-height: 37px;
+    margin-right: 5px;
+    text-align: center;
+    width: 160px;
+}
