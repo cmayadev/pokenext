@@ -29,13 +29,14 @@ const Card = ({ pokemon }) => {
             <Link href={"/dex/" + pkmn.id}>
                 <div className={styles.card}>
                     <img className={styles.image} alt={pkmn.name} src={pkmn.sprite} />
-                    <span className={styles.number}>#{pkmn.id}</span>
+                    <span className={styles.number}>#{('00' + pkmn.id).slice(-3)}</span>
                     <span className={styles.name}>{pkmn.name}</span>
+                    <span className={styles.category}>{pkmn.category}</span>
                     <div className={styles.types}>
                         {
-                            pkmn.type ?
-                                pkmn.type.map((type, key) => (
-							        <Type key={key} name={type.type.name} />
+                            pkmn.types ?
+                                pkmn.types.map((type, key) => (
+							        <Type key={key} name={type} />
 						    )) : ''
                         }
 					</div>

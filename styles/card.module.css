@@ -3,22 +3,29 @@
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(37, 38, 94, 0.06);
     cursor: pointer;
-
-    height: 170px;
-    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+    height: 210px;
+    position: relative;
     text-align: center;
 }
 
+.card:hover .image {
+    top: 46px;
+}
+
 .image {
-    height: 100px;
-    margin-top: -50px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .number {
-    color: #758A97;
+    color: #F2F1F0;
     display: block;
-    font-size: 13px;
+    font-size: 75px;
     font-weight: 700;
+    height: 100px;
 }
 
 .name {
@@ -26,5 +33,12 @@
     display: block;
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 15px;
+}
+
+.category {
+    color: #758A97;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 10px;
 }

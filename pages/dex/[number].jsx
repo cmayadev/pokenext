@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -17,14 +15,6 @@ const Pokemon = ({ pokemonData }) => {
 
     return ( 
         <>
-			<Head>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-				<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
-			</Head>
-
-			<Header />
-
             <div className={styles.mainData}>
 				<div className={styles.main}>
 					<img className={styles.mainImage} alt={pokemonData.name} src={pokemonData.official} />
@@ -32,8 +22,8 @@ const Pokemon = ({ pokemonData }) => {
 	                <span className={styles.name}>{pokemonData.name}</span>
 	                <span className={styles.category}>{pokemonData.category}</span>
 					<div className={styles.types}>
-						{pokemonData.type.map((type, key) => (
-							<Type key={key} name={type.type.name} />
+						{pokemonData.types.map((type, key) => (
+							<Type key={key} name={type} />
 						))}
 					</div>
 					<div>
