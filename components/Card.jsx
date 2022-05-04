@@ -18,7 +18,6 @@ const Card = ({ pokemon }) => {
     useEffect(() => {
         async function getPokemon() {
             const pokemonData = await getPokemonData(number);
-            console.log(pokemonData);
             setPkmn(pokemonData);
         }
         getPokemon();

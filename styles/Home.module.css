@@ -6,10 +6,16 @@
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 20% 80%;
+}
+
+.filters h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  margin-top: 0;
+  text-transform: uppercase;
 }
 
 .footer {

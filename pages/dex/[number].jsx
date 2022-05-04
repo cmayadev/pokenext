@@ -37,7 +37,6 @@ const Pokemon = ({ pokemonData }) => {
 					</div>
 					<div className={styles.col}>
 						<span className={styles.title}>Abilities</span>
-						{console.log(pokemonData.abilities)}
 						{pokemonData.abilities.map((ability, key) => (
 							<Stat 
 								key={key}
