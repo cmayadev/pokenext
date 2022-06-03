@@ -5,41 +5,31 @@ import styles from '../styles/Home.module.css'
 
 import Card from '../components/Card.jsx'
 
-import { getPokemonList } from '../lib/pokemon';
+import { getPokemonList, getPokemonTypes, getPokemonsByType } from '../lib/pokemon';
 
 export const getStaticProps = async () => {
 	const pokemonList = await getPokemonList();
+	const pokemonTypes = await getPokemonTypes();
 
 	return {
-		props: { pokemonList },
+		props: { pokemonList, pokemonTypes },
 	};
 };
 
-export default function Home({ pokemonList }) {
+export default function Home({ pokemonList, pokemonTypes }) {
 
   const [type, setType] = useState([]);
   const [filteredType, setFilteredType] = useState([]);
 
-  const handleChange = e => {
-    if (e.target.checked) {
-      setType([...type, e.target.value]);
-    } else {
-      setType(type.filter(id => id !== e.target.value));
-    }
+  const handleChange = async (e) => {
+      setFilteredType([]);
+      pokemonList = await getPokemonsByType(e.target.value);
+      setFilteredType(pokemonList)
   };
 
   useEffect(() => {
-    if (type.length === 0) {
       setFilteredType(pokemonList)
-      console.log(pokemonList);
-    } else {
-      setFilteredType(
-        pokemonList.filter(pokemon =>
-          type.some(category => [pokemon.types].flat().includes(category))
-        )
-      )
-    }
-  }, [type])
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -48,17 +38,21 @@ export default function Home({ pokemonList }) {
 
         <div className={styles.filters}>
           <div className={styles.filter}>
-            <h3>Generation</h3>
-            <div>
-              <input
-                id="2"
-                type="checkbox"
-                title="Fire"
-                value="fire"
-                onChange={handleChange}
-              />
-              <label htmlFor="2">Fire</label>
-            </div>
+            <h3>Types</h3>
+              { pokemonTypes.map((type, key) => (
+                  <div key={key}>
+                    <input
+                      id={key}
+                      type="radio"
+                      name="type"
+                      title={type.name.charAt(0).toUpperCase() + type.name.slice(1)}
+                      value={type.name}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor={key}>{type.name.charAt(0).toUpperCase() + type.name.slice(1)}</label>    
+                  </div>
+                ))
+              }
           </div>
         </div> 
 

@@ -69,3 +69,38 @@
     background-color: var(--fighting-color);
     color: var(--fighting-color);
 }
+
+.type-rock {
+    background-color: var(--rock-color);
+    color: var(--rock-color);
+}
+
+.type-dragon {
+    background-color: var(--dragon-color);
+    color: var(--dragon-color);
+}
+
+.type-ice {
+    background-color: var(--ice-color);
+    color: var(--ice-color);
+}
+
+.type-fairy {
+    background-color: var(--fairy-color);
+    color: var(--fairy-color);
+}
+
+.type-psychic {
+    background-color: var(--psychic-color);
+    color: var(--psychic-color);
+}
+
+.type-dark {
+    background-color: var(--dark-color);
+    color: var(--dark-color);
+}
+
+.type-ghost {
+    background-color: var(--ghost-color);
+    color: var(--ghost-color);
+}
