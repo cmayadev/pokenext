@@ -1,10 +1,16 @@
-import styles from '../styles/stat.module.css';
+import styles from '../styles/stat.module.scss';
 
-const Stat = ({ status, hidden, skill }) => {
+const Stat = ({ status, hidden, skill, children }) => {
     return ( 
         <>
             <div className={ skill ? styles.skill : styles.status}>
-                { status.charAt(0).toUpperCase() + status.slice(1) } {hidden ? <img src="/icons/hide.png" /> : ''}
+                { 
+                    status ?
+                        status.charAt(0).toUpperCase() + status.slice(1) 
+                    :
+                    children
+                } 
+                { hidden ? <img src="/icons/hide.png" /> : '' }
             </div>
         </>
     );

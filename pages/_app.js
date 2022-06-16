@@ -1,5 +1,5 @@
 import '../styles/type.css'
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 import Meta from "../components/meta.jsx";
 import Header from "../components/header.jsx";

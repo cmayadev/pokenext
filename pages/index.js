@@ -18,12 +18,12 @@ export const getStaticProps = async () => {
 
 export default function Home({ pokemonList, pokemonTypes }) {
 
-  const [type, setType] = useState([]);
+  const [types, setTypes] = useState([]);
   const [filteredType, setFilteredType] = useState([]);
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
       setFilteredType([]);
-      pokemonList = await getPokemonsByType(e.target.value);
+      pokemonList = pokemonList.filter(pokemon => pokemon.types.includes(e.target.value));
       setFilteredType(pokemonList)
   };
 
@@ -66,16 +66,7 @@ export default function Home({ pokemonList, pokemonTypes }) {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+            
       </footer>
     </div>
   )

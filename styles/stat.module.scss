@@ -2,7 +2,8 @@
     background-color: #F6F8FC;
     border-radius: 50px;
     color: #011030;
-    display: block;
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
     font-weight: 600;
     height: 37px;
@@ -20,6 +21,13 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.skill span {
+
+    + span {
+        text-align: right;
+    }
 }
 
 .status {
