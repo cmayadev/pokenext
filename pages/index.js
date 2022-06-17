@@ -21,8 +21,11 @@ export default function Home() {
       <main className={styles.main}>
 
         <section className={styles.filters}>
+          <div>
             <h3>Types</h3>
             <Filters types={types} setTypes={setTypes} />
+          </div>
+
         </section> 
 
         <div className="card-list">
