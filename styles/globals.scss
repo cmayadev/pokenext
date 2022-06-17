@@ -62,6 +62,7 @@ a {
 
 .card-list {
   display: grid;
+  grid-auto-rows: 215px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }

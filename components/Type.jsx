@@ -1,8 +1,8 @@
-const Type = ({ name }) => {
+const Type = ({ name, text }) => {
     return ( 
         <>
             <div className={`type type-${name}`}>
-                <span>{name}</span>
+                <span>{text}</span>
             </div>
         </>
     );

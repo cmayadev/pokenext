@@ -12,22 +12,21 @@ const Pokemon = ({ pokemonData, pokemonList }) => {
 
     const router = useRouter();
 
+	const pokemon = pokemonList.find(({ id }) => id === pokemonData.id)
 	const prev = pokemonList.find(({ id }) => id === pokemonData.id - 1)
     const next = pokemonList.find(({ id }) => id === pokemonData.id + 1)
-
-	console.log(prev, next);
 
     return ( 
         <>
             <div className={styles.mainData}>
 				<div className={styles.main}>
 					<img className={styles.mainImage} alt={pokemonData.name} src={pokemonData.official} />
-					<span className={styles.number}>#{pokemonData.id}</span>
+					<span className={styles.number}>#{pokemon.entry}</span>
 	                <span className={styles.name}>{pokemonData.name}</span>
-	                <span className={styles.category}>{pokemonData.category}</span>
+	                <span className={styles.category}>{pokemon.genera['es']}</span>
 					<div className={styles.types}>
-						{pokemonData.types.map((type, key) => (
-							<Type key={key} name={type} />
+						{pokemon.types.map((type) => (
+							<Type key={type.name} name={type.name} text={type.languages['es']} />
 						))}
 					</div>
 					<div>
@@ -41,7 +40,7 @@ const Pokemon = ({ pokemonData, pokemonList }) => {
 									<div className={styles.prev}>
 										<div> {"<"} </div>
 										<img className={styles.miniature} src={getSprite(prev.id)} />
-										<span>{prev.name}</span>
+										<span>{prev.names.languages['es']}</span>
 									</div>
 								</Link>
 							:
@@ -57,7 +56,7 @@ const Pokemon = ({ pokemonData, pokemonList }) => {
 							next &&
 							<Link href={"/dex/" + next.id}>
 								<div className={styles.next}>
-									<span>{next.name}</span>
+									<span>{next.names.languages['es']}</span>
 									<img className={styles.miniature} src={getSprite(next.id)} />
 									<div> {">"} </div>
 								</div>
