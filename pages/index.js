@@ -18,11 +18,12 @@ export default function Home() {
   return (
     <div className={styles.container}>
 
-      <SearchFilter setSearchValue={setSearchValue} />
-
       <main className={styles.main}>
 
         <section className={styles.filters}>
+
+            <SearchFilter setSearchValue={setSearchValue} />
+
             <h3>Types</h3>
             <Filters types={types} setTypes={setTypes} />
         </section> 

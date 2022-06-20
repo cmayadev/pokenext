@@ -10,8 +10,7 @@ const SearchFilter = ({setSearchValue}) => {
 
     return ( 
         <div>
-            <input type="text" placeholder="Search" value={inputValue} onChange={onChangeHandler} />
-            <input type="reset" value="Clear" />
+            <input type="text" className="search" placeholder="Buscar pokemon..." value={inputValue} onChange={onChangeHandler} />
         </div>
     );
 }

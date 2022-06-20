@@ -75,6 +75,33 @@ html {
   gap: 30px;
 }
 
+.search {
+  border-radius: 7px;
+    --focus: 2px rgba(39, 94, 254, .3);
+    --border: #BBC1E1;
+    --background: #fff;
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 30px;
+    outline: none;
+    padding: 0 12px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    color: #8A91B4;
+    margin-right: 10px;
+}
+
+.search::placeholder {
+  color: #B8B8B8;
+}
+
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
   input[type='radio'] {
