@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './filters.module.scss';
+
 const Filters = ({types, setTypes}) => {
 
     const onChangeHandler = ({target}) => {
@@ -12,18 +14,16 @@ const Filters = ({types, setTypes}) => {
     };
 
     return (
-        <>
+        <ul className={styles.filters}>
             {
                 types.map(type => 
-                    <div key={type.name}>
-                        <label key={type.name}>
-                            <input type="checkbox" name={type.original} id={type.original} onChange={onChangeHandler} checked={type.isActive}/>
-                            <span>{type.name}</span>
-                        </label>
-                    </div> 
+                    <li key={type.name}>
+                        <input type="checkbox" name={type.original} id={type.original} onChange={onChangeHandler} checked={type.isActive}/>
+                        <label htmlFor={type.original}>{type.name}</label>
+                    </li> 
                 )
             }
-        </>
+        </ul>
     );
 }
 

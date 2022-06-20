@@ -1,8 +1,9 @@
 import '../styles/type.css'
 import '../styles/globals.scss'
 
-import Meta from "../components/meta.jsx";
-import Header from "../components/header.jsx";
+import Meta from "../components/Navigation/meta.jsx";
+import Header from "../components/Navigation/Header.jsx";
+import Footer from "../components/Navigation/Footer.jsx";
 
 function MyApp({ Component, pageProps }) {
   return ( 
@@ -12,6 +13,8 @@ function MyApp({ Component, pageProps }) {
       <Header />
 
       <Component {...pageProps} />
+
+      <Footer />
     </>
   )
 }

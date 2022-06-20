@@ -1,10 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
 import Card from '../components/Card.jsx'
 import Filters from '../components/Filters.jsx'
+import SearchFilter from '../components/SearchFilter.jsx'
 
 import usePokemons from "../hooks/usePokemons";
 import usePokemonTypes from "../hooks/usePokemonTypes";
@@ -12,20 +11,20 @@ import usePokemonTypes from "../hooks/usePokemonTypes";
 
 export default function Home() {
 
+  const [searchValue, setSearchValue] = useState("");
   const [types, setTypes, selectedTypes] = usePokemonTypes();
-  const filteredPokemons = usePokemons({selectedTypes});
+  const filteredPokemons = usePokemons({selectedTypes, searchValue});
 
   return (
     <div className={styles.container}>
 
+      <SearchFilter setSearchValue={setSearchValue} />
+
       <main className={styles.main}>
 
         <section className={styles.filters}>
-          <div>
             <h3>Types</h3>
             <Filters types={types} setTypes={setTypes} />
-          </div>
-
         </section> 
 
         <div className="card-list">
@@ -37,9 +36,6 @@ export default function Home() {
 
       </main>
 
-      <footer className={styles.footer}>
-            
-      </footer>
     </div>
   )
 }

@@ -1,8 +1,8 @@
-import Container from '../components/Container.jsx';
+import Container from '../Container.jsx';
 
 import Link from 'next/link';
 
-import styles from '../styles/header.module.scss'
+import styles from '../../styles/header.module.scss'
 
 const Header = () => {
     return ( 
