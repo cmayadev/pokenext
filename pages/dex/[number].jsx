@@ -19,8 +19,9 @@ const Pokemon = ({ pokemonData, pokemonList }) => {
     return ( 
         <>
             <div className={styles.mainData}>
+				<div className={`colored ${pokemon.types[0].name}`}></div>
 				<div className={styles.main}>
-					<img className={styles.mainImage} alt={pokemonData.name} src={pokemonData.official} />
+					<img className={styles.mainImage} alt={pokemonData.name} src={pokemonData.dream} />
 					<span className={styles.number}>#{pokemon.entry}</span>
 	                <span className={styles.name}>{pokemonData.name}</span>
 	                <span className={styles.category}>{pokemon.genera['es']}</span>

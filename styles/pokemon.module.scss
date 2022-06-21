@@ -1,34 +1,59 @@
+@use "settings/sizes";
+
 .mainData {
     display: grid;
-    grid-template-columns: 35% 65%;
-    grid-gap: 20px;
-
+    grid-template-columns: auto;
+    
     font-family: 'Poppins', sans-serif;
-    margin-top: 150px;
+
+    @media (min-width: 768px) {
+        grid-gap: 20px;
+        grid-template-columns: 1.5fr 3fr;
+        margin-top: 150px;
+    }
 }
 
 .main {
     background: #FFFFFF;
-    border-radius: 15px;
+    
     box-shadow: 0 4px 12px rgba(37, 38, 94, 0.06);
     padding: 0 20px 20px 20px;
     text-align: center;
+    display: grid;
+    align-items: center;
+    width: 100vw;
+
+    @media (min-width: 768px) {
+        border-radius: 15px;
+        width: unset;
+    }
 }
 
 .mainImage {
-    height: 230px;
-    margin-top: -100px;
+    height: 180px;
+    margin: -120px auto 10px auto;
+    max-width: 300px;
+
+    @media (min-width: 768px) {
+        height: 200px;
+        margin: -100px auto 10px auto;
+    }
 }
 
 .info {
     background: #FFFFFF;
-    border-radius: 15px;
+    
     box-shadow: 0 4px 12px rgba(37, 38, 94, 0.06);
     padding: 20px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto;
     grid-gap: 20px;
+
+    @media (min-width: 768px) {
+        border-radius: 15px;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .number {

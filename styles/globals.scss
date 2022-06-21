@@ -3,23 +3,54 @@
 
 :root {
   --bug-color: #C7D370;
+  --bug-shadow: #AEB962;
   --dark-color: #A6968B;
   --dragon-color: #A581FD;
+  --dragon-shadow: #9071DD;
   --electric-color: #FAE27B;
+  --electric-shadow: #DBC66C;
   --fairy-color: #E5B3CC;
+  --fairy-shadow: #C89DB3;
   --fighting-color: #D97C79;
+  --fighting-shadow: #BE6D6A;
   --fire-color: #FF994D;
+  --fire-shadow: #DF8643;
   --flying-color: #C9B9F7;
   --ghost-color: #A896BE;
+  --ghost-shadow: #9383A6;
   --grass-color: #ACDC8F;
+  --grass-shadow: #97C17D;
   --ground-color: #EDD79F;
+  --ground-shadow: #CFBC8B;
   --ice-color: #BDE7E5;
+  --ice-shadow: #A5CAC8;
   --normal-color: #C9C8AC;
+  --normal-shadow: #B0AF97;
   --poison-color: #C686C4;
+  --poison-shadow: #AD75AC;
   --psychic-color: #FB95B4;
+  --psychic-shadow: #DC829E;
   --rock-color: #D1C481;
+  --rock-shadow: #B7AC71;
   --steel-color: #D2D2E0;
   --water-color: #9EBAF6;
+
+  --bug-gradient: linear-gradient(90deg, var(--bug-color) 0%, var(--bug-shadow) 100%);
+  --dragon-gradient: linear-gradient(90deg, var(--dragon-color) 0%, var(--dragon-shadow) 100%);
+  --fairy-gradient: linear-gradient(90deg, var(--fairy-color) 0%, var(--fairy-shadow) 100%);
+  --fighting-gradient: linear-gradient(90deg, var(--fighting-color) 0%, var(--fighting-shadow) 100%);
+  --fire-gradient: linear-gradient(90deg, var(--fire-color) 0%, var(--fire-shadow) 100%);
+  --ghost-gradient: linear-gradient(90deg, var(--ghost-color) 0%, var(--ghost-shadow) 100%);
+  --ground-gradient: linear-gradient(90deg, var(--ground-color) 0%, var(--ground-shadow) 100%);
+  --ice-gradient: linear-gradient(90deg, var(--ice-color) 0%, var(--ice-shadow) 100%);
+  --electric-gradient: linear-gradient(90deg, var(--electric-color) 0%, var(--electric-shadow) 100%);
+  --grass-gradient: linear-gradient(90deg, var(--grass-color) 0%, var(--grass-shadow) 100%);
+  --normal-gradient: linear-gradient(90deg, var(--normal-color) 0%, var(--normal-shadow) 100%);
+  --poison-gradient: linear-gradient(90deg, var(--poison-color) 0%, var(--poison-shadow) 100%);
+  --psychic-gradient: linear-gradient(90deg, var(--psychic-color) 0%, var(--psychic-shadow) 100%);
+  --rock-gradient: linear-gradient(90deg, var(--rock-color) 0%, var(--rock-shadow) 100%);
+  --water-gradient: linear-gradient(90deg, rgba(158,186,246,1) 0%, rgba(138,163,215,1) 100%);
+
 
   --container-width: #{sizes.$mobile-xs};
   --container-padding: #{spacing.$sm};
@@ -47,8 +78,15 @@ body {
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #f6f8fc;
   max-width: 1200px;
+}
+
+body {
+  background-color: #fff;
+
+  @media (min-width: 768px) {
+    background-color: #f6f8fc;
+  }
 }
 
 a {
@@ -73,6 +111,34 @@ html {
   grid-auto-rows: 215px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+}
+
+.colored {
+  display: block;
+  height: 200px;
+  border-bottom-left-radius: 20% 20%;
+  border-bottom-right-radius: 20% 20%;
+
+  @media (min-width: 768px) {
+      display: none;
+  }
+
+  &.bug { background: var(--bug-gradient) }
+  &.dragon { background: var(--dragon-gradient) }
+  &.fairy { background: var(--fairy-gradient) }
+  &.fighting { background: var(--fighting-gradient) }
+  &.fire { background: var(--fire-gradient) }
+  &.ground { background: var(--ground-gradient) }
+  &.ice { background: var(--ice-gradient) }
+  &.electric { background: var(--electric-gradient) }
+  &.ghost { background: var(--ghost-gradient) }
+  &.grass { background: var(--grass-gradient) }
+  &.normal { background: var(--normal-gradient) }
+  &.poison { background: var(--poison-gradient) }
+  &.psychic { background: var(--psychic-gradient) }
+  &.rock { background: var(--rock-gradient) }
+  &.steel { background: var(--steel-gradient) }
+  &.water { background: var(--water-gradient) }
 }
 
 .search {

@@ -2,11 +2,17 @@
     background-color: #FFFFFF;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(37, 38, 94, 0.06);
-    display: grid;
-    align-items: center;
-    height: 87px;
+    display: none;
+    
     max-width: 1200px;
-    margin: 30px auto;
+    
+
+    @media (min-width: 768px) {
+        display: grid;
+        height: 87px;
+        margin: 30px auto;
+        align-items: center;
+    }
 }
 
 .navlist {
