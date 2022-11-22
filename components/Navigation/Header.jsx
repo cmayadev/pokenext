@@ -19,6 +19,9 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>Types</li>
+                        <li>
+                            <Link href={"/paldea"}>Paldea</Link>
+                        </li>
                     </ul>
                 </Container>
             </nav>

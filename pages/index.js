@@ -7,13 +7,15 @@ import SearchFilter from '../components/SearchFilter.jsx'
 
 import usePokemons from "../hooks/usePokemons";
 import usePokemonTypes from "../hooks/usePokemonTypes";
+import usePokemonStatus from "../hooks/usePokemonStatus";
 
 
 export default function Home() {
 
   const [searchValue, setSearchValue] = useState("");
   const [types, setTypes, selectedTypes] = usePokemonTypes();
-  const filteredPokemons = usePokemons({selectedTypes, searchValue});
+  const [status, setStatus, selectedStatus] = usePokemonStatus();
+  const filteredPokemons = usePokemons({selectedTypes, searchValue, selectedStatus});
 
   return (
     <div className={styles.container}>
